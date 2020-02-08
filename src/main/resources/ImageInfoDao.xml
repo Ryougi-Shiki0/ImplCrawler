@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="dao.ImageInfoDao">
+    <resultMap id="imageMap" type="ImageInfo">
+        <result property="id" column="id"/>
+        <result property="picName" column="picName"/>
+        <result property="url" column="url"/>
+        <result property="tag" column="tag"/>
+        <result property="authorId" column="authorId"/>
+        <result property="author" column="author"/>
+    </resultMap>
+
+    <insert id="saveImageInfo" parameterType="ImageInfo">
+        insert into imageinfo(id,picName,url,tag,authorId,author) values(#{id},#{picName},#{url},#{tag},#{authorId},#{author});
+    </insert>
+</mapper>
