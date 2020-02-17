@@ -78,8 +78,21 @@ public class ImageProcessor implements PageProcessor {
         return site;
     }
 
-    @Autowired
-    private SpringDataPipeline springDataPipeline;
+    private String getPixivUrl(String[] keyWords){
+        String url="";
+        if(keyWords.length==1)
+            url="https://www.pixiv.net/ajax/search/artworks/"+keyWords[0];
+        else {
+            StringBuilder temp=new StringBuilder();
+            for(String s:keyWords)
+                temp.append(s).append("%20");
+            url="https://www.pixiv.net/ajax/search/artworks/"+temp;
+        }
+        return url;
+    }
+
+    //@Autowired
+    //private SpringDataPipeline springDataPipeline;
     //initialDelay当任务启动，等多久执行方法
     //fixedDelay每隔多久执行方法
     //@Scheduled(initialDelay = 1000,fixedDelay = 100000)
@@ -96,16 +109,9 @@ public class ImageProcessor implements PageProcessor {
     }*/
 
 
-    public void pixivSearchByTags(String[] keyWords,boolean isRecord) {
-        String url="";
-        if(keyWords.length==1)
-            url="https://www.pixiv.net/ajax/search/artworks/"+keyWords[0];
-        else {
-            StringBuilder temp=new StringBuilder();
-            for(String s:keyWords)
-                temp.append(s).append("%20");
-            url="https://www.pixiv.net/ajax/search/artworks/"+temp;
-        }
+    public void pixivSearchByTags(String[] keyWords) {
+        String url=getPixivUrl(keyWords);
+        //设置代理
         HttpClientDownloader downloader=new HttpClientDownloader();
         downloader.setProxyProvider(SimpleProxyProvider.from(new Proxy("127.0.0.1",1080)));
         Spider.create(new ImageProcessor())
