@@ -1,4 +1,4 @@
-package task;
+package service;
 
 import us.codecraft.webmagic.ResultItems;
 

@@ -1,13 +1,12 @@
-package task.pixiv;
+package service.pixiv;
 
 import dao.ImageInfoDao;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
-import org.aspectj.lang.annotation.Before;
 import pojo.ImageInfo;
-import task.Downloader;
+import service.Downloader;
 import us.codecraft.webmagic.ResultItems;
 import us.codecraft.webmagic.Task;
 import us.codecraft.webmagic.pipeline.Pipeline;
@@ -46,8 +45,8 @@ public class PixivDownloader implements Downloader, Pipeline {
             //获取封装好的数据
             List<ImageInfo> imageInfos=resultItems.get("ImageInfo");
             if(!imageInfos.isEmpty()){
-                for(int i=0;i<imageInfos.size();i++){
-                    imageInfoDao.saveImageInfo(imageInfos.get(i));
+                for (ImageInfo imageInfo : imageInfos) {
+                    imageInfoDao.saveImageInfo(imageInfo);
                 }
             }
         }catch (Exception e){
@@ -69,8 +68,8 @@ public class PixivDownloader implements Downloader, Pipeline {
             //获取封装好的数据
             List<ImageInfo> imageInfos=resultItems.get("ImageInfo");
             if(!imageInfos.isEmpty()){
-                for(int i=0;i<imageInfos.size();i++){
-                    imageInfoDao.saveImageInfo(imageInfos.get(i));
+                for (ImageInfo imageInfo : imageInfos) {
+                    imageInfoDao.saveImageInfo(imageInfo);
                 }
             }
         }catch (Exception e){

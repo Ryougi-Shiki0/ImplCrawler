@@ -1,10 +1,7 @@
-package task.pixiv;
+package service.pixiv;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import pojo.ImageInfo;
-import task.SpringDataPipeline;
 import us.codecraft.webmagic.*;
 import us.codecraft.webmagic.downloader.HttpClientDownloader;
 import us.codecraft.webmagic.processor.PageProcessor;
@@ -38,28 +35,47 @@ public class ImageProcessor implements PageProcessor {
     List<Selectable> tagList;
     List<Selectable> titleList;
     List<Selectable> userNameList;
+    int curPage=1;
 
     @Override
     public void process(Page page) {
-        /*List<Selectable> list= page.getHtml()
-                //.css("div#sc-LzNRr > ul  li.sc-LzNRt")
-                .xpath("/html/body/div[1]/div[2]/div[5]/div/section/div[2]/ul/li")
-                .nodes();*/
+        //获取总页数
         Json json=page.getJson();
-        illustIdList= page.getJson().jsonPath("$..illustId").nodes();
-        userIdList= page.getJson().jsonPath("$..userId").nodes();
-        tagList= page.getJson().jsonPath("$..tags").nodes();
-        titleList= page.getJson().jsonPath("$..illustTitle").nodes();
-        userNameList= page.getJson().jsonPath("$..userName").nodes();
-        if(!illustIdList.isEmpty()){
-            this.saveImageInfo(page);
+        int imageAmount=Integer.parseInt(json.jsonPath("$..total").toString());
+        if(imageAmount%60!=0)
+            imageAmount=imageAmount/60+1;
+        String url=page.getUrl().toString();
+        if(curPage!=imageAmount){
+            //将全部请求页加入请求队列
+            List<String > requests=new ArrayList<>();
+            if(url.contains("&s_mode=s_tag")){
+                for(;curPage<=imageAmount;curPage++){
+                    StringBuilder temp=new StringBuilder(url);
+                    temp.insert(url.length()-13,"&p="+curPage);
+                    requests.add(temp.toString());
+                }
+            }
+            else {
+                for(;curPage<=imageAmount;curPage++){
+                    requests.add(url + "&p="+curPage);
+                }
+            }
+            page.addTargetRequests(requests);
         }
+        this.saveImageInfo(page);
     }
 
     //存储数据
     private void saveImageInfo(Page page) {
         List<ImageInfo> imageInfos=new ArrayList<>();
         ImageInfo temp=new ImageInfo();
+
+        Json json=page.getJson();
+        illustIdList= json.jsonPath("$..illustId").nodes();
+        userIdList= json.jsonPath("$..userId").nodes();
+        tagList= json.jsonPath("$..tags").nodes();
+        titleList= json.jsonPath("$..illustTitle").nodes();
+        userNameList= json.jsonPath("$..userName").nodes();
         for(int i=0;i<illustIdList.size();i++){
             temp.setUrl("www.pixiv.net/artworks/"+Long.parseLong(illustIdList.get(i).toString()));
             temp.setId(Long.parseLong(illustIdList.get(i).toString()));
@@ -84,9 +100,13 @@ public class ImageProcessor implements PageProcessor {
             url="https://www.pixiv.net/ajax/search/artworks/"+keyWords[0];
         else {
             StringBuilder temp=new StringBuilder();
-            for(String s:keyWords)
-                temp.append(s).append("%20");
-            url="https://www.pixiv.net/ajax/search/artworks/"+temp;
+            for(int i=0;i<keyWords.length;i++){
+                if(i!=keyWords.length-1)
+                    temp.append(keyWords[i]).append("%20");
+                else
+                    temp.append(keyWords[i]);
+            }
+            url="https://www.pixiv.net/ajax/search/artworks/"+temp+"?word="+temp+"&s_mode=s_tag";
         }
         return url;
     }
@@ -114,12 +134,13 @@ public class ImageProcessor implements PageProcessor {
         //设置代理
         HttpClientDownloader downloader=new HttpClientDownloader();
         downloader.setProxyProvider(SimpleProxyProvider.from(new Proxy("127.0.0.1",1080)));
+
         Spider.create(new ImageProcessor())
                 .addUrl(url)//"https://www.pixiv.net/ajax/search/artworks/%E7%99%BE%E5%90%88?word=%E7%99%BE%E5%90%88&p=2"
                 .setScheduler(new QueueScheduler().setDuplicateRemover(new BloomFilterDuplicateRemover(10000)))
                 .setDownloader(downloader)
                 .addPipeline(new PixivDownloader())
-                .thread(3)
+                .thread(1)
                 .run();
     }
 }

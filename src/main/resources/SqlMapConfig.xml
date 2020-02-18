@@ -24,6 +24,6 @@
 
     <mappers>
         <mapper resource="ImageInfoDao.xml"/>
-        <!--<package name="mycrawler.dao"/>-->
+        <!--<package name="dao"/>-->
     </mappers>
 </configuration>

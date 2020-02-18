@@ -9,36 +9,20 @@ import pojo.ImageInfo;
 
 import java.util.List;
 
-//@Service
+@Service
 public class ImageInfoService implements service.ImageInfoService {
 
     //@Autowired
     private ImageInfoDao imageInfoDao;
 
+    /**
+     * 按照标签搜索
+     * @param tags
+     * @return List
+     */
     @Override
-    //@Transactional
-    public void save(ImageInfo imageInfo) {
-        //根据url查询数据
-        ImageInfo param=new ImageInfo();
-        param.setUrl(imageInfo.getUrl());
-
+    public List<ImageInfo> findImage(String tags) {
         //执行查询
-        List<ImageInfo> list=this.findImage(param);
-
-        //判断查询数据是否为空
-        if(list.isEmpty()){
-            //若查询数据为空，则表示不存在，或已更新，则更新数据库
-            //this.imageInfoDao.saveAndFlush(imageInfo);
-        }
-        //
-    }
-
-    @Override
-    public List<ImageInfo> findImage(ImageInfo imageInfo) {
-        //设置查询条件
-        Example<ImageInfo> example=Example.of(imageInfo);
-        //执行查询
-        //return this.imageInfoDao.findAll(example);
-        return null;
+        return this.imageInfoDao.findByTags(tags);
     }
 }
