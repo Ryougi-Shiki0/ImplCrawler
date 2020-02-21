@@ -1,4 +1,4 @@
-package pojo;
+package mycrawler.pojo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

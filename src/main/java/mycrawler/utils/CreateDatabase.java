@@ -1,4 +1,4 @@
-package utils;
+package mycrawler.utils;
 
 public class CreateDatabase {
     /*create table ImageInfo(

@@ -1,4 +1,4 @@
-package utils;
+package mycrawler.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
@@ -20,6 +20,7 @@ import org.jsoup.nodes.Element;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -98,7 +99,7 @@ public class Login {
             params.add(new BasicNameValuePair("pixiv_id", "17757078"));
             params.add(new BasicNameValuePair("password", "1q2w3e4r"));
             params.add(new BasicNameValuePair("post_key", post_keyStr));
-            post.setEntity(new UrlEncodedFormEntity(params, Charset.forName("UTF-8")));
+            post.setEntity(new UrlEncodedFormEntity(params, StandardCharsets.UTF_8));
             response = client.execute(post);
             String responseContent = EntityUtils.toString(response.getEntity());
             //解析返回的json

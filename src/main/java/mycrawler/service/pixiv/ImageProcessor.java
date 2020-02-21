@@ -1,7 +1,9 @@
-package service.pixiv;
+package mycrawler.service.pixiv;
 
+import mycrawler.service.ImageInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import pojo.ImageInfo;
+import mycrawler.pojo.ImageInfo;
 import us.codecraft.webmagic.*;
 import us.codecraft.webmagic.downloader.HttpClientDownloader;
 import us.codecraft.webmagic.processor.PageProcessor;
@@ -12,11 +14,13 @@ import us.codecraft.webmagic.scheduler.QueueScheduler;
 import us.codecraft.webmagic.selector.Json;
 import us.codecraft.webmagic.selector.Selectable;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+
 public class ImageProcessor implements PageProcessor {
+
     private Site site=Site.me()
             .setCharset("utf8")
             .setTimeOut(10000)
@@ -95,7 +99,7 @@ public class ImageProcessor implements PageProcessor {
     }
 
     private String getPixivUrl(String[] keyWords){
-        String url="";
+        String url;
         if(keyWords.length==1)
             url="https://www.pixiv.net/ajax/search/artworks/"+keyWords[0];
         else {
@@ -129,12 +133,11 @@ public class ImageProcessor implements PageProcessor {
     }*/
 
 
-    public void pixivSearchByTags(String[] keyWords) {
+    public void pixivSearchByTags(String[] keyWords,ImageProcessor task) {
         String url=getPixivUrl(keyWords);
         //设置代理
         HttpClientDownloader downloader=new HttpClientDownloader();
         downloader.setProxyProvider(SimpleProxyProvider.from(new Proxy("127.0.0.1",1080)));
-
         Spider.create(new ImageProcessor())
                 .addUrl(url)//"https://www.pixiv.net/ajax/search/artworks/%E7%99%BE%E5%90%88?word=%E7%99%BE%E5%90%88&p=2"
                 .setScheduler(new QueueScheduler().setDuplicateRemover(new BloomFilterDuplicateRemover(10000)))
