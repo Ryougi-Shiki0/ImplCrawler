@@ -9,7 +9,7 @@ public class MyTask {
     public static void main(String[] args) {
         ApplicationContext ac=new ClassPathXmlApplicationContext("classpath:applicationContext.xml");
         ImageProcessor task= ac.getBean("imageProcessor",ImageProcessor.class);
-        String[] keyWords={"fate","30000"};
+        String[] keyWords={"東方","10000"};
         task.pixivSearchByTags(keyWords,task);
     }
 }

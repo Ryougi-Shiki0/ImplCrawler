@@ -29,13 +29,11 @@ import java.util.List;
 
 public class PixivDownloader implements Pipeline {
 
-    ImageInfoService imageInfoService;
-
     @Override
     @Transactional(propagation= Propagation.REQUIRED)
     public void process(ResultItems resultItems, Task task) {
         ApplicationContext ac=new ClassPathXmlApplicationContext("applicationContext.xml");
-        imageInfoService=(ImageInfoService) ac.getBean("imageInfoService");
+        ImageInfoService imageInfoService = (ImageInfoService) ac.getBean("imageInfoService");
         imageInfoService.savePixivImagesData(resultItems);
     }
 }

@@ -1,5 +1,10 @@
 package mycrawler.utils;
 
+import com.alibaba.fastjson.JSON;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class CreateDatabase {
     /*create table ImageInfo(
     `dbId` int primary key auto_increment,
