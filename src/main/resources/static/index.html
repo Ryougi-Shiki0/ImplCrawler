@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
+    <meta charset="UTF-8">
     <title>搜索结果</title>
 </head>
 <body>
 
 <br>
 
-<form action="getPixivImageUrl" method="post">
+<form action="pixiv/getPixivImageUrl" method="post">
+    tags：<input type="text" name="tags" /><br/>
+    <input type="submit" value="提交" />
+</form>
+
+<form action="pixiv/getCrawlerResults" method="post">
     tags：<input type="text" name="tags" /><br/>
     <input type="submit" value="提交" />
 </form>

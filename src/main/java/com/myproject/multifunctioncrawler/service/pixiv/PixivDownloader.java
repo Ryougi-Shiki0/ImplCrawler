@@ -1,6 +1,7 @@
 package com.myproject.multifunctioncrawler.service.pixiv;
 
 import com.myproject.multifunctioncrawler.service.ImageInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
@@ -19,12 +20,12 @@ import java.util.List;
 
 @Component
 public class PixivDownloader implements Pipeline {
+    @Autowired
+    ImageInfoService imageInfoService;
 
     @Override
     @Transactional(propagation= Propagation.REQUIRED)
     public void process(ResultItems resultItems, Task task) {
-        ApplicationContext ac=new ClassPathXmlApplicationContext("applicationContext.xml");
-        ImageInfoService imageInfoService = (ImageInfoService) ac.getBean("imageInfoService");
         imageInfoService.savePixivImagesData(resultItems);
     }
 }

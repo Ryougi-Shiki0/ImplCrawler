@@ -2,12 +2,15 @@ package com.myproject.multifunctioncrawler.service.Impl;
 
 import com.myproject.multifunctioncrawler.dao.ImageInfoDao;
 import com.myproject.multifunctioncrawler.service.ImageInfoService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.myproject.multifunctioncrawler.pojo.ImageInfo;
+import redis.clients.jedis.Jedis;
 import us.codecraft.webmagic.ResultItems;
 import java.util.List;
 
+@Slf4j
 @Service("imageInfoService")
 public class ImageInfoServiceImpl implements ImageInfoService {
 
@@ -22,13 +25,14 @@ public class ImageInfoServiceImpl implements ImageInfoService {
             for (ImageInfo imageInfo : imageInfos) {
                 imageInfoDao.savePixivImageInfo(imageInfo);
             }
+            log.info("Save Success.");
         }
     }
 
     @Override
     public List<String> searchPixivImageByTags(String tags) {
         String[] temp= tags.split(" ");
-        System.out.println("调用searchPixivImageByTags: "+tags);
+        log.info("Tag: " + tags);
         if(temp.length==0)  return null;
         if(temp.length==1){
             return imageInfoDao.searchPixivImageByTag("%"+temp[0]+"%");
