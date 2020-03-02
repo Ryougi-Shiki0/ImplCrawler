@@ -2,7 +2,6 @@ package com.myproject.multifunctioncrawler.controller;
 
 
 import com.alibaba.fastjson.JSON;
-import com.myproject.multifunctioncrawler.pojo.ImageInfo;
 import com.myproject.multifunctioncrawler.pojo.ImageUrl;
 import com.myproject.multifunctioncrawler.result.Result;
 import com.myproject.multifunctioncrawler.service.ImageInfoService;
@@ -14,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @Slf4j
@@ -38,13 +36,13 @@ public class PixivImageController {
     }
 
     @RequestMapping("/getPixivImageUrl")
-    //@ResponseBody
+    @ResponseBody
     public String getPixivImageUrl(@ModelAttribute ImageUrl imageUrl, Model model){
         List<String> res=imageInfoService.searchPixivImageByTags(imageUrl.getTags());
         log.info(""+res.size());
-        String result=JSON.toJSONString(res);
-        model.addAttribute("json", result);
-        return "successResults";
+        //model.addAttribute("json", result);
+        //return "successResults";
+        return JSON.toJSONString(res);
     }
 
     @RequestMapping("/getCrawlerResults")

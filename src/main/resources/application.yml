@@ -21,15 +21,15 @@ spring:
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
       filters: stat
-
-
   thymeleaf:
     cache: false
     enabled: true
     encoding: UTF-8
     mode: HTML5
-    prefix: classpath:/static/
+    prefix: classpath:/templates/
     suffix: .html
+    servlet:
+      content-type: text/html
   redis:
     host: 127.0.0.1
     port: 6379
@@ -45,3 +45,6 @@ mybatis:
   type-aliases-package: com.myproject.multifunctioncrawler.pojo
   configuration:
     map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 3000
+debug: true

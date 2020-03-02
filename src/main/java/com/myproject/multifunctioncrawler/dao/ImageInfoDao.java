@@ -17,7 +17,7 @@ public interface ImageInfoDao { //extends JpaRepository<ImageInfo,Long>
     void savePixivImageInfo(ImageInfo imageInfo);
 
     @Select("select url from imageinfo where tag like #{tag}")
-    List<String> searchPixivImageByTag(String tag);
+    List<String> searchPixivImageByTag(@Param("tag") String tag);
 
     @Select("select url from imageinfo where tag like #{tag1} and tag like #{tag2} and tag like #{tag3}")
     List<String> searchPixivImageByTags(String tag1,String tag2,String tag3);

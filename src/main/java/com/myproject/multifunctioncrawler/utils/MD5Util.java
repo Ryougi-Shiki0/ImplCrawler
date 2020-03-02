@@ -10,13 +10,12 @@ public class MD5Util {
     private static final String salt = "hhminato";
 
     public static String inputPassToFormPass(String inputPass) {
-        String str = ""+salt.charAt(0)+salt.charAt(2) + inputPass +salt.charAt(5) + salt.charAt(4);
-        System.out.println(str);
+        String str = ""+salt.charAt(0)+salt.charAt(1) + inputPass +salt.substring(2);
         return md5(str);
     }
 
     public static String formPassToDBPass(String formPass, String salt) {
-        String str = ""+salt.charAt(0)+salt.charAt(2) + formPass +salt.charAt(5) + salt.charAt(4);
+        String str = ""+salt.charAt(0)+salt.charAt(1) + formPass +salt.substring(2);
         return md5(str);
     }
 
@@ -24,5 +23,9 @@ public class MD5Util {
         String formPass = inputPassToFormPass(inputPass);
         String dbPass = formPassToDBPass(formPass, saltDB);
         return dbPass;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(inputPassToFormPass(""));//be32958a3e6d6f1f4373c006c5e1505a
     }
 }
