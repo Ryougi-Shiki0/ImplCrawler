@@ -13,14 +13,13 @@ public interface ImageInfoDao { //extends JpaRepository<ImageInfo,Long>
      * 保存图片信息
      * @param imageInfo
      */
-    @Insert("insert into imageinfo(tag,author,id,authorId,url,picName) values(#{tag},#{author},#{id},#{authorId},#{url},#{picName});")
+    @Insert("insert into imageinfo(id,tag,author,authorId,url,picName) values(#{id},#{tag},#{author},#{authorId},#{url},#{picName});")
     void savePixivImageInfo(ImageInfo imageInfo);
 
     @Select("select url from imageinfo where tag like #{tag}")
     List<String> searchPixivImageByTag(@Param("tag") String tag);
 
-    @Select("select url from imageinfo where tag like #{tag1} and tag like #{tag2} and tag like #{tag3}")
-    List<String> searchPixivImageByTags(String tag1,String tag2,String tag3);
-
+    @Select("select url from imageinfo where tag like #{tag1} and tag like #{tag2}")
+    List<String> searchPixivImageByTags(String tag1,String tag2);
 
 }

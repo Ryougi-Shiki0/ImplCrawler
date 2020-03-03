@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 
 
 public interface UserService {
+    String COOKIE_NAME_TOKEN = "token";
 
-    public User getById(long id);
-    public boolean login(HttpServletResponse response,LoginVo loginVo);
+     User getById(long id);
+    boolean login(HttpServletResponse response,LoginVo loginVo);
+    User getByToken(HttpServletResponse response, String token);
+
 }

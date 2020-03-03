@@ -10,8 +10,10 @@ import com.myproject.multifunctioncrawler.service.redis.UserKey;
 import com.myproject.multifunctioncrawler.utils.MD5Util;
 import com.myproject.multifunctioncrawler.utils.UUIDUtil;
 import com.myproject.multifunctioncrawler.vo.LoginVo;
+import org.jsoup.helper.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.thymeleaf.util.StringUtils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +21,6 @@ import java.util.UUID;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private static final String COOKIE_NAME_TOKEN = "token";
 
     @Autowired
     private UserDao userDao;
@@ -29,7 +30,33 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getById(long id) {
-        return userDao.getById(id);
+        User user=redisService.get(UserKey.getById,""+id,User.class);
+        if(user!=null){
+            return user;
+        }
+        user=userDao.getById(id);
+        if(user!=null){
+            redisService.set(UserKey.getById,""+id,user);
+        }
+        return user;
+    }
+
+    public boolean updatePassword(String token, long id, String formPass) {
+        //取user
+        User user = getById(id);
+        if(user == null) {
+            throw new GlobalException(CodeMsg.MOBILE_NOT_EXIST);
+        }
+        //更新数据库
+        User toBeUpdate = new User();
+        toBeUpdate.setId(id);
+        toBeUpdate.setPassword(MD5Util.formPassToDBPass(formPass, user.getSalt()));
+        userDao.update(toBeUpdate);
+        //处理缓存
+        redisService.delete(UserKey.getById, ""+id);
+        user.setPassword(toBeUpdate.getPassword());
+        redisService.set(UserKey.token, token, user);
+        return true;
     }
 
     @Override
@@ -50,11 +77,28 @@ public class UserServiceImpl implements UserService {
             throw new GlobalException(CodeMsg.PASSWORD_ERROR);
         }
         String token= UUIDUtil.uuid();
-        redisService.set(UserKey.token,token,user);
-        Cookie cookie=new Cookie(COOKIE_NAME_TOKEN,token);
+        addCookie(response,token,user);
+        return true;
+    }
+
+    @Override
+    public User getByToken(HttpServletResponse response,String token) {
+        if(StringUtils.isEmpty(token)){
+            return null;
+        }
+
+        User user=redisService.get(UserKey.token,token,User.class);
+        if(user!=null){
+            addCookie(response,token,user);
+        }
+        return user;
+    }
+
+    private void addCookie(HttpServletResponse response, String token, User user) {
+        redisService.set(UserKey.token, token, user);
+        Cookie cookie = new Cookie(COOKIE_NAME_TOKEN, token);
         cookie.setMaxAge(UserKey.token.expireSeconds());
         cookie.setPath("/");
         response.addCookie(cookie);
-        return true;
     }
 }

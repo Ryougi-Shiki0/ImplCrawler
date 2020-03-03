@@ -1,6 +1,9 @@
 package com.myproject.multifunctioncrawler.pojo;
 
+import javax.validation.constraints.NotNull;
+
 public class ImageUrl {
+    @NotNull
     String tags;
 
     public String getTags() {

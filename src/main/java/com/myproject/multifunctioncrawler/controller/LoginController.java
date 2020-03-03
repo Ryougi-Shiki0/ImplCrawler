@@ -27,7 +27,10 @@ public class LoginController {
 
     @Autowired
     RedisService redisService;
-
+    @RequestMapping("/to_login")
+    public String toLogin(){
+        return "login";
+    }
     @RequestMapping("/do_login")
     @ResponseBody
     public Result<Boolean> doLogin(HttpServletResponse response, @Valid LoginVo loginVo) {
