@@ -1,48 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0b03882-99d5-4149-9693-9d53b89023e4" name="Default Changelist" comment="2020.3.2 Finish login And Distrubuted Session">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/config/UserArgumentResolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/GoodsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/RushController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/GoodsDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/OrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/RushGoodsDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/Goods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/OrderInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/RushGoods.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/RushOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/GoodsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/GoodsServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/OrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/RushServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/OrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/RushService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/vo/GoodsVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/Favorite.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/crawlerRequest.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/order_detail.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/rush_fail.html" afterDir="false" />
+    <list default="true" id="e0b03882-99d5-4149-9693-9d53b89023e4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/mq/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/RushMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/PixivImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/PixivImageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/ImageInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/ImageInfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/ImageUrl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/ImageUrl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/result/CodeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/result/CodeMsg.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/ImageInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/ImageInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/RedisPoolFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/RedisPoolFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/GoodsDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/RedisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/UserKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/UserKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/goods_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/goods_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/successResults.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/successResults.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -194,7 +160,7 @@
       <workItem from="1582958353917" duration="9383000" />
       <workItem from="1583041707378" duration="3872000" />
       <workItem from="1583130676568" duration="36220000" />
-      <workItem from="1583217029660" duration="30790000" />
+      <workItem from="1583217029660" duration="41828000" />
     </task>
     <task id="LOCAL-00001" summary="Convert to SpringBoot">
       <created>1582796564568</created>
@@ -210,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582958435696</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2020.3.3 Finish several cache-relative functions">
+      <created>1583265624085</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583265624085</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,7 +195,8 @@
     <MESSAGE value="Convert to SpringBoot" />
     <MESSAGE value="2020.2.28 Update RedisService and login" />
     <MESSAGE value="2020.3.2 Finish login And Distrubuted Session" />
-    <option name="LAST_COMMIT_MESSAGE" value="2020.3.2 Finish login And Distrubuted Session" />
+    <MESSAGE value="2020.3.3 Finish several cache-relative functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020.3.3 Finish several cache-relative functions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583140542958">
@@ -241,54 +215,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="445" y="194" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1583140526731" />
-    <state x="544" y="271" width="501" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583235433742">
+    <state x="544" y="271" width="501" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1583317049095">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="544" y="271" width="501" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1583235433742" />
+    <state x="544" y="271" width="501" height="292" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1583317049095" />
     <state x="165" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583237570369">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="165" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1583237570369" />
-    <state x="343" y="2" key="CommitChangelistDialog2" timestamp="1583265587752">
+    <state x="343" y="2" key="CommitChangelistDialog2" timestamp="1583265622992">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="343" y="2" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583265587752" />
+    <state x="343" y="2" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583265622992" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1582979947391">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582979947391" />
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1583263334180">
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1583308557983">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583263334180" />
-    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1583263334180">
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
+    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1583308557982">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583263334180" />
-    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1583263334180">
+    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583308557982" />
+    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1583308557982">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583263334180" />
-    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1583263334180">
+    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583308557982" />
+    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1583308557983">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583263334180" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1583263334180">
+    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
+    <state width="1493" height="195" key="GridCell.Tab.1.bottom" timestamp="1583308557983">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583263334180" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1583263334180">
+    <state width="1493" height="195" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
+    <state width="1493" height="195" key="GridCell.Tab.1.center" timestamp="1583308557983">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583263334180" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1583263334180">
+    <state width="1493" height="195" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
+    <state width="1493" height="195" key="GridCell.Tab.1.left" timestamp="1583308557983">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583263334180" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1583263334180">
+    <state width="1493" height="195" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
+    <state width="1493" height="195" key="GridCell.Tab.1.right" timestamp="1583308557983">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583263334180" />
+    <state width="1493" height="195" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
     <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1583263334181">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -313,10 +287,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583248492053" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1583265610630">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1583265812443">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583265610630" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583265812443" />
     <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1582917100103">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
