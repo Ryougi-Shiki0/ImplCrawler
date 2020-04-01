@@ -18,10 +18,13 @@ public class OrderServiceImpl implements OrderService {
 	@Autowired
 	OrderDao orderDao;
 	
-	public RushOrder getMiaoshaOrderByUserIdGoodsId(long userId, long goodsId) {
+	@Override
+	public RushOrder getRushOrderByUserIdGoodsId(long userId, long goodsId) {
 		return orderDao.getRushOrderByUserIdGoodsId(userId, goodsId);
 	}
 
+
+	@Override
 	@Transactional
 	public OrderInfo createOrder(User user, GoodsVo goods) {
 		OrderInfo orderInfo = new OrderInfo();
@@ -42,5 +45,15 @@ public class OrderServiceImpl implements OrderService {
 		orderDao.insertRushOrder(rushOrder);
 		return orderInfo;
 	}
-	
+
+	@Override
+	public void deleteOrders() {
+		orderDao.deleteOrders();
+		orderDao.deleteRushOrders();
+	}
+
+	@Override
+	public OrderInfo getOrderById(long orderId) {
+		return orderDao.getOrderById(orderId);
+	}
 }

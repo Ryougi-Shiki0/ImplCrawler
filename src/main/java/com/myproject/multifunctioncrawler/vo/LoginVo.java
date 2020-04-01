@@ -7,6 +7,9 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * @author Arthas
+ */
 @Getter
 @Setter
 public class LoginVo {
@@ -20,9 +23,6 @@ public class LoginVo {
 
     @Override
     public String toString() {
-        return "LoginVo{" +
-                "mobile='" + mobile + '\'' +
-                ", password='" + password + '\'' +
-                '}';
+        return "LoginVo [mobile=" + mobile + ", password=" + password + "]";
     }
 }

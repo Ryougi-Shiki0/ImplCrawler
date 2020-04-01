@@ -11,11 +11,14 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.servlet.http.HttpServletResponse;
 
 
+/**
+ * @author Arthas
+ */
 public interface UserService {
     String COOKIE_NAME_TOKEN = "token";
 
      User getById(long id);
-    boolean login(HttpServletResponse response,LoginVo loginVo);
+    String login(HttpServletResponse response,LoginVo loginVo);
     User getByToken(HttpServletResponse response, String token);
 
 }

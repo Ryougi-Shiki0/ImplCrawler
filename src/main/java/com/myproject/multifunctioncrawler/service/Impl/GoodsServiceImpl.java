@@ -26,9 +26,20 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public void reduceStock(GoodsVo goods) {
+    public boolean reduceStock(GoodsVo goods) {
         RushGoods g = new RushGoods();
         g.setGoodsId(goods.getId());
-        goodsDao.reduceStock(g);
+        int ret = goodsDao.reduceStock(g);
+        return ret > 0;
+    }
+
+    @Override
+    public void resetStock(List<GoodsVo> goodsList) {
+        for(GoodsVo goods : goodsList ) {
+            RushGoods g = new RushGoods();
+            g.setGoodsId(goods.getId());
+            g.setStockCount(goods.getStockCount());
+            goodsDao.resetStock(g);
+        }
     }
 }

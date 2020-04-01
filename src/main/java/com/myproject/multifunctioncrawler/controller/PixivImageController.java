@@ -1,14 +1,10 @@
 package com.myproject.multifunctioncrawler.controller;
 
-
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
+import com.myproject.multifunctioncrawler.mq.MQSender;
 import com.myproject.multifunctioncrawler.pojo.ImageUrl;
 import com.myproject.multifunctioncrawler.pojo.User;
-import com.myproject.multifunctioncrawler.result.CodeMsg;
 import com.myproject.multifunctioncrawler.result.Result;
 import com.myproject.multifunctioncrawler.service.ImageInfoService;
-import com.myproject.multifunctioncrawler.service.Impl.UserServiceImpl;
 import com.myproject.multifunctioncrawler.service.UserService;
 import com.myproject.multifunctioncrawler.service.redis.ImageInfoKey;
 import com.myproject.multifunctioncrawler.service.redis.RedisService;
@@ -18,17 +14,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-import org.thymeleaf.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
 
 @Slf4j
 @Controller
@@ -46,6 +35,9 @@ public class PixivImageController {
 
     @Autowired
     private RedisService redisService;
+
+    @Autowired
+    private MQSender sender;
 
     public ImageUrl getImageUrl(@RequestParam("tags") String tags){
         ImageUrl imageUrl=new ImageUrl();
@@ -77,8 +69,9 @@ public class PixivImageController {
     @RequestMapping("/getCrawlerResults")
     public String getCrawlerResults(@ModelAttribute ImageUrl imageUrl, Model model){
         String[] searchTags=imageUrl.getTags().trim().split(" ");
-        if(searchTags.length < 1)
+        if (searchTags.length < 1) {
             return "failed";
+        }
         imageProcessor.pixivSearchByTags(searchTags);
         return "success";
     }
@@ -86,6 +79,7 @@ public class PixivImageController {
     @RequestMapping("/test")
     @ResponseBody
     public Result<Long> redisGet(){
+        sender.send("hello,imooc");
         Long v1=redisService.get(ImageInfoKey.getById,"key1",Long.class);
         return Result.success(v1);
     }

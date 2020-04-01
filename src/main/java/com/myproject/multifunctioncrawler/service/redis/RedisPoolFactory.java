@@ -7,6 +7,9 @@ import org.springframework.stereotype.Service;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+/**
+ * @author Arthas
+ */
 @Service
 public class RedisPoolFactory {
     @Autowired
@@ -18,7 +21,7 @@ public class RedisPoolFactory {
         poolConfig.setMaxIdle(500);
         poolConfig.setMaxTotal(1000);
         poolConfig.setMaxWaitMillis(3000);
-        JedisPool jedisPool=new JedisPool(poolConfig,redisConfig.getHost(),redisConfig.getPort(),redisConfig.getTimeout()*1000);
+        JedisPool jedisPool=new JedisPool(poolConfig,redisConfig.getHost(),redisConfig.getPort(),redisConfig.getTimeout()*1000,redisConfig.getPassword());
         return jedisPool;
     }
 }

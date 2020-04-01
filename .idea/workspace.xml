@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0b03882-99d5-4149-9693-9d53b89023e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/mq/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/RushMessage.java" afterDir="false" />
+    <list default="true" id="e0b03882-99d5-4149-9693-9d53b89023e4" name="Default Changelist" comment="2020.3.5 Update MQ section">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/access/AccessInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/access/AccessLimit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/access/UserContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/mq/MQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/mq/MQReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/mq/MQSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/mq/RushMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/bilibili/DanmuPipeline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/bilibili/DanmuProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/AccessKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/GoodsKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/OrderKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/RushKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/vo/GoodsDetailVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/vo/OrderDetailVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/goods_detail.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/bg2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/order_detail.htm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/MultifunctioncrawlerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/MultifunctioncrawlerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/config/UserArgumentResolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/config/UserArgumentResolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/config/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/PixivImageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/PixivImageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/RushController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/RushController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/GoodsDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/mq/Producer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/RushMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/pojo/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/result/CodeMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/result/CodeMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/result/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/GoodsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/GoodsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/ImageInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/ImageInfoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/RushServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/RushServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/RushService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/RushService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/RedisPoolFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/RedisPoolFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/RedisService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/UserKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/redis/UserKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/utils/validator/IsMobile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/utils/validator/IsMobile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/vo/LoginVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/vo/LoginVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/common.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/goods_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/goods_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/goods_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/goods_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/rush_fail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/myproject/multifunctioncrawler/com/myproject/Test_1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/myproject/multifunctioncrawler/com/myproject/Test_1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,26 +118,30 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/jquery-validation" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35747126" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\hawk4\IdeaProjects\ImplCrawler\src\main\resources\templates" />
-      <recent name="C:\Users\hawk4\Desktop\Temp\practice\multifunctioncrawler\src\main\resources\static" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hawk4\IdeaProjects\ImplCrawler\src\main\resources\static\jquery-validation" />
+      <recent name="C:\Users\hawk4\IdeaProjects\ImplCrawler\src\main\resources\static\js" />
+      <recent name="C:\Users\hawk4\IdeaProjects\ImplCrawler\src\main\resources\static" />
+      <recent name="C:\Users\hawk4\IdeaProjects\ImplCrawler\src\main\resources\static\img" />
+      <recent name="C:\Users\hawk4\IdeaProjects\ImplCrawler\src\main\java\com\myproject\multifunctioncrawler\vo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.myproject.multifunctioncrawler.service" />
+      <recent name="com.myproject.multifunctioncrawler.controller" />
+      <recent name="com.myproject.multifunctioncrawler.service.redis" />
       <recent name="com.myproject.multifunctioncrawler.dao" />
       <recent name="com.myproject.multifunctioncrawler.pojo" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hawk4\IdeaProjects\ImplCrawler\src\main\resources\templates" />
-      <recent name="C:\Users\hawk4\IdeaProjects\ImplCrawler\src\main\java\com\myproject\multifunctioncrawler\service\Impl" />
-      <recent name="C:\Users\hawk4\IdeaProjects\ImplCrawler\src\main\java\com\myproject\multifunctioncrawler\pojo" />
-      <recent name="C:\Users\hawk4\IdeaProjects\ImplCrawler\src\main\resources\static" />
+      <recent name="C:\Users\hawk4\Desktop\Temp\practice\multifunctioncrawler\src\main\resources\static" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.MultifunctioncrawlerApplication">
@@ -160,7 +216,24 @@
       <workItem from="1582958353917" duration="9383000" />
       <workItem from="1583041707378" duration="3872000" />
       <workItem from="1583130676568" duration="36220000" />
-      <workItem from="1583217029660" duration="41828000" />
+      <workItem from="1583217029660" duration="42699000" />
+      <workItem from="1583477006871" duration="1212000" />
+      <workItem from="1583562656024" duration="14930000" />
+      <workItem from="1583765546056" duration="5093000" />
+      <workItem from="1583773770248" duration="2920000" />
+      <workItem from="1583846126254" duration="599000" />
+      <workItem from="1583919306463" duration="596000" />
+      <workItem from="1584027321386" duration="602000" />
+      <workItem from="1584028475611" duration="599000" />
+      <workItem from="1584030113144" duration="599000" />
+      <workItem from="1584033109256" duration="307000" />
+      <workItem from="1584033445012" duration="3270000" />
+      <workItem from="1584241678155" duration="7810000" />
+      <workItem from="1584262893364" duration="1195000" />
+      <workItem from="1585408715943" duration="5673000" />
+      <workItem from="1585547156280" duration="3581000" />
+      <workItem from="1585635754508" duration="599000" />
+      <workItem from="1585727519160" duration="20313000" />
     </task>
     <task id="LOCAL-00001" summary="Convert to SpringBoot">
       <created>1582796564568</created>
@@ -183,11 +256,28 @@
       <option name="project" value="LOCAL" />
       <updated>1583265624085</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="2020.3.5 Update MQ section">
+      <created>1583423549396</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1583423549396</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -196,21 +286,26 @@
     <MESSAGE value="2020.2.28 Update RedisService and login" />
     <MESSAGE value="2020.3.2 Finish login And Distrubuted Session" />
     <MESSAGE value="2020.3.3 Finish several cache-relative functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="2020.3.3 Finish several cache-relative functions" />
+    <MESSAGE value="2020.3.5 Update MQ section" />
+    <option name="LAST_COMMIT_MESSAGE" value="2020.3.5 Update MQ section" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583140542958">
+    <state x="361" y="71" key="#Project_Structure" timestamp="1584260516899">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1583140542958" />
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1584260516899" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585732343167">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585732343167" />
     <state x="501" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583140727415">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="501" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1583140727415" />
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1583221583267">
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser" timestamp="1585752353008">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1583221583267" />
+    <state x="574" y="122" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1585752353008" />
     <state x="445" y="194" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1583140526731">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -223,86 +318,102 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="165" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1583237570369" />
-    <state x="343" y="2" key="CommitChangelistDialog2" timestamp="1583265622992">
+    <state x="343" y="2" key="CommitChangelistDialog2" timestamp="1585759355205">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="343" y="2" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583265622992" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1582979947391">
+    <state x="343" y="2" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585759355205" />
+    <state x="36" y="60" width="1350" height="638" key="DiffContextDialog" timestamp="1584262825725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582979947391" />
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1583308557983">
+    <state x="36" y="60" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1584262825725" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1585733841254">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
-    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1583308557982">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1585733841254" />
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1585759212738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583308557982" />
-    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1583308557982">
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585759212738" />
+    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1585759212738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583308557982" />
-    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1583308557983">
+    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585759212738" />
+    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1585759212737">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
-    <state width="1493" height="195" key="GridCell.Tab.1.bottom" timestamp="1583308557983">
+    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585759212737" />
+    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1585759212738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
-    <state width="1493" height="195" key="GridCell.Tab.1.center" timestamp="1583308557983">
+    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585759212738" />
+    <state width="1493" height="195" key="GridCell.Tab.1.bottom" timestamp="1585759212738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
-    <state width="1493" height="195" key="GridCell.Tab.1.left" timestamp="1583308557983">
+    <state width="1493" height="195" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585759212738" />
+    <state width="1493" height="195" key="GridCell.Tab.1.center" timestamp="1585759212738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
-    <state width="1493" height="195" key="GridCell.Tab.1.right" timestamp="1583308557983">
+    <state width="1493" height="195" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585759212738" />
+    <state width="1493" height="195" key="GridCell.Tab.1.left" timestamp="1585759212738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583308557983" />
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom" timestamp="1583263334181">
+    <state width="1493" height="195" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585759212738" />
+    <state width="1493" height="195" key="GridCell.Tab.1.right" timestamp="1585759212738">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583263334181" />
-    <state width="1493" height="261" key="GridCell.Tab.2.center" timestamp="1583263334180">
+    <state width="1493" height="195" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585759212738" />
+    <state width="1493" height="155" key="GridCell.Tab.2.bottom" timestamp="1585758652398">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1583263334180" />
-    <state width="1493" height="261" key="GridCell.Tab.2.left" timestamp="1583263334180">
+    <state width="1493" height="155" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585758652398" />
+    <state width="1493" height="155" key="GridCell.Tab.2.center" timestamp="1585758652398">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1583263334180" />
-    <state width="1493" height="261" key="GridCell.Tab.2.right" timestamp="1583263334180">
+    <state width="1493" height="155" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1585758652398" />
+    <state width="1493" height="155" key="GridCell.Tab.2.left" timestamp="1585758652398">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1583263334180" />
+    <state width="1493" height="155" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1585758652398" />
+    <state width="1493" height="155" key="GridCell.Tab.2.right" timestamp="1585758652398">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="155" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1585758652398" />
     <state x="299" y="67" key="Maven.ArtifactSearchDialog" timestamp="1582788769975">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="299" y="67" key="Maven.ArtifactSearchDialog/0.0.1536.824@0.0.1536.824" timestamp="1582788769975" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1583248492053">
+    <state x="491" y="123" key="RollbackChangesDialog" timestamp="1584262107275">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1583248492053" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1583265812443">
+    <state x="491" y="123" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1584262107275" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1584262984449">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583265812443" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584262984449" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1583598829453">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583598829453" />
     <state width="775" height="419" key="XDebugger.FullValuePopup" timestamp="1582917100103">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="775" height="419" key="XDebugger.FullValuePopup/0.0.1536.824@0.0.1536.824" timestamp="1582917100103" />
+    <state x="337" y="2" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1585752338961">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="337" y="2" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1585752338961" />
     <state x="479" y="130" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1582788500456">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="479" y="130" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1536.824@0.0.1536.824" timestamp="1582788500456" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1583255899290">
+    <state x="178" y="113" key="new project wizard" timestamp="1584257575278">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583255899290" />
+    <state x="178" y="113" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1584257575278" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585754598518">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585754598518" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -318,9 +429,19 @@
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/ImageInfoServiceImpl.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/RushController.java</url>
+          <line>155</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/GoodsController.java</url>
+          <line>134</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/controller/GoodsController.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

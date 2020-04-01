@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+/**
+ * @author Arthas
+ */
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -27,15 +30,18 @@ public class LoginController {
 
     @Autowired
     RedisService redisService;
+
     @RequestMapping("/to_login")
     public String toLogin(){
         return "login";
     }
+
     @RequestMapping("/do_login")
     @ResponseBody
-    public Result<Boolean> doLogin(HttpServletResponse response, @Valid LoginVo loginVo) {
+    public Result<String> doLogin(HttpServletResponse response, @Valid LoginVo loginVo) {
         log.info(loginVo.toString());
-        userService.login(response,loginVo);
-        return Result.success(true);
+        //登录
+        String token = userService.login(response, loginVo);
+        return Result.success(token);
     }
 }

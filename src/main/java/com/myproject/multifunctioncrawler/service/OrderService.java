@@ -6,6 +6,12 @@ import com.myproject.multifunctioncrawler.pojo.User;
 import com.myproject.multifunctioncrawler.vo.GoodsVo;
 
 public interface OrderService {
-    public RushOrder getMiaoshaOrderByUserIdGoodsId(long userId, long goodsId);
-    public OrderInfo createOrder(User user, GoodsVo goods);
+
+    RushOrder getRushOrderByUserIdGoodsId(long userId, long goodsId);
+
+    OrderInfo createOrder(User user, GoodsVo goods);
+
+    void deleteOrders();
+
+    OrderInfo getOrderById(long orderId);
 }

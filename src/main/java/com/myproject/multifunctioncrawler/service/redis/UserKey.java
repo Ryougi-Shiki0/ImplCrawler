@@ -1,7 +1,7 @@
 package com.myproject.multifunctioncrawler.service.redis;
 
 public class UserKey extends BasePrefix {
-    private static final int TOKEN_EXPIRESECONDS=3600*24*2;
+    private static final int TOKEN_EXPIRESECONDS=3600*2*24;
 
     private UserKey(int expireSeconds,String prefix){
         super(expireSeconds,prefix);
