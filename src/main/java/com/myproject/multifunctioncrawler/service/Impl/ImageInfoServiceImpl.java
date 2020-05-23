@@ -52,16 +52,16 @@ public class ImageInfoServiceImpl implements ImageInfoService {
             return list;
         }
         String res0=redisService.get(ImageInfoKey.getById,tags,String.class);
-        list= Arrays.asList(res0.split(","));
+        //list= ;
         if (temp.length == 1) {
             if (list.size() > 0) {
-                return list;
+                return Arrays.asList(res0.split(","));
             }
             list = imageInfoDao.searchPixivImageByTag("%" + temp[0] + "%");
         } else {
             return list;
         }
-        if (list != null) {
+        if (res0==null && list != null ) {
             redisService.set(ImageInfoKey.getById, tags, JSON.toJSON(list));
         }
         return list;

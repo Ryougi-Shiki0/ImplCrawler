@@ -21,40 +21,45 @@ spring:
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
       filters: stat
-#  kafka:
-#    producer:
-#      retries: 0
-#      batch-size: 16384
-#      buffer-memory: 33554432
-#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-#    consumer:
-#      group-id: teset-hello-group
-#      auto-offset-reset: earliest
-#      enable-auto-commit: true
-#      auto-commit-interval: 100
-#      key-deserializer: org.apache.kafka.common.serialization.StringSerializer
-#      value-deserializer: org.apache.kafka.common.serialization.StringSerializer
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-#    password: guest
-    virtual-host: /
-    listener:
-      simple:
-        concurrency: 10
-        max-concurrency: 10
-        prefetch: 1
-        auto-startup: true
-        default-requeue-rejected: true
-    template:
-      retry:
-        enabled: true
-        initial-interval: 1000
-        max-attempts: 3
-        max-interval: 10000
-        multiplier: 1.0
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      retries: 0
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: test-hello-group
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+##    password: guest
+#    virtual-host: /
+#    listener:
+#      simple:
+#        concurrency: 10
+#        max-concurrency: 10
+#        prefetch: 1
+#        auto-startup: true
+#        default-requeue-rejected: true
+#    template:
+#      retry:
+#        enabled: true
+#        initial-interval: 1000
+#        max-attempts: 3
+#        max-interval: 10000
+#        multiplier: 1.0
+#    publisher-confirm-type: simple
+#    cache:
+#      channel:
+#        size: 100
   thymeleaf:
     cache: false
     enabled: true

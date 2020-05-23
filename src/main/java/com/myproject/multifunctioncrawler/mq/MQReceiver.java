@@ -8,8 +8,8 @@ import com.myproject.multifunctioncrawler.service.RushService;
 import com.myproject.multifunctioncrawler.service.redis.RedisService;
 import com.myproject.multifunctioncrawler.vo.GoodsVo;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 @Slf4j
@@ -25,7 +25,7 @@ public class MQReceiver {
     @Autowired
     RushService rushService;
 
-    @RabbitListener(queues = MQConfig.RUSH_QUEUE)
+    @KafkaListener(topics = "RUSH")
     public void receive(String message){
         log.info("receive message:"+message);
         RushMessage mm  = RedisService.stringToBean(message, RushMessage.class);
