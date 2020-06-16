@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myproject.multifunctioncrawler.dao.ImageInfoMapper">
+  <resultMap id="BaseResultMap" type="com.myproject.multifunctioncrawler.entity.ImageInfo">
+    <constructor>
+      <idArg column="id" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="tag" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="author" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="authorId" javaType="java.lang.Integer" jdbcType="INTEGER" />
+      <arg column="url" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="picName" javaType="java.lang.String" jdbcType="VARCHAR" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, tag, author, authorId, url, picName
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from imageinfo
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from imageinfo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.myproject.multifunctioncrawler.entity.ImageInfo">
+    insert into imageinfo (id, tag, author, 
+      authorId, url, picName
+      )
+    values (#{id,jdbcType=INTEGER}, #{tag,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
+      #{authorid,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{picname,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.myproject.multifunctioncrawler.entity.ImageInfo">
+    insert into imageinfo
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="tag != null">
+        tag,
+      </if>
+      <if test="author != null">
+        author,
+      </if>
+      <if test="authorid != null">
+        authorId,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="picname != null">
+        picName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="tag != null">
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorid != null">
+        #{authorid,jdbcType=INTEGER},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="picname != null">
+        #{picname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.myproject.multifunctioncrawler.entity.ImageInfo">
+    update imageinfo
+    <set>
+      <if test="tag != null">
+        tag = #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="author != null">
+        author = #{author,jdbcType=VARCHAR},
+      </if>
+      <if test="authorid != null">
+        authorId = #{authorid,jdbcType=INTEGER},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="picname != null">
+        picName = #{picname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.myproject.multifunctioncrawler.entity.ImageInfo">
+    update imageinfo
+    set tag = #{tag,jdbcType=VARCHAR},
+      author = #{author,jdbcType=VARCHAR},
+      authorId = #{authorid,jdbcType=INTEGER},
+      url = #{url,jdbcType=VARCHAR},
+      picName = #{picname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

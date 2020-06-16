@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0b03882-99d5-4149-9693-9d53b89023e4" name="Default Changelist" comment="2020.5.23 Update Kafka">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/myproject/multifunctioncrawler/AbstractJunitBootTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/myproject/multifunctioncrawler/AbstractTransactionalTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/image/pixivimages/image_tags.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/ImageInfoMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/entity/ImageInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ImageInfoMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/access/UserContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/access/UserContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/ImageInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/service/Impl/ImageInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/myproject/multifunctioncrawler/MultifunctioncrawlerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/myproject/multifunctioncrawler/MultifunctioncrawlerApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/myproject/multifunctioncrawler/mq/MQSenderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/myproject/multifunctioncrawler/mq/MQSenderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/myproject/multifunctioncrawler/service/Impl/ImageInfoServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/myproject/multifunctioncrawler/service/Impl/ImageInfoServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +36,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="generatorConfig" />
       </list>
     </option>
   </component>
@@ -73,7 +70,7 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NewTest" />
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35747126" />
@@ -194,9 +191,9 @@
       <item itemvalue="JUnit.StubbingTest.testStubbing1" />
       <item itemvalue="JUnit.RushServiceTest.testGetRushResult" />
       <item itemvalue="JUnit.RushServiceTest" />
-      <item itemvalue="Spring Boot.MultifunctioncrawlerApplication" />
       <item itemvalue="JUnit.ImageInfoServiceImplTest" />
       <item itemvalue="JUnit.ImageInfoServiceImplTest.testSearchPixivImageByTags" />
+      <item itemvalue="Spring Boot.MultifunctioncrawlerApplication" />
     </list>
     <recent_temporary>
       <list>
@@ -388,26 +385,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="36" y="60" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1584262825725" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1588066141420">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1592311508658">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588066141420" />
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1592299334259">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592311508658" />
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1592312224287">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592299334259" />
-    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1592299334259">
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592312224287" />
+    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1592312224287">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592299334259" />
-    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1592299334259">
+    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592312224287" />
+    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1592312224286">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592299334259" />
-    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1592299334259">
+    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592312224286" />
+    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1592312224287">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592299334259" />
+    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592312224287" />
     <state width="1493" height="195" key="GridCell.Tab.1.bottom" timestamp="1592299257065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
