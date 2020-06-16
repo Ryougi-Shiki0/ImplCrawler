@@ -2,6 +2,9 @@ package com.myproject.multifunctioncrawler.access;
 
 import com.myproject.multifunctioncrawler.pojo.User;
 
+/**
+ * @author Arthas
+ */
 public class UserContext {
 	
 	private static ThreadLocal<User> userHolder = new ThreadLocal<>();

@@ -5,7 +5,6 @@ import com.myproject.multifunctioncrawler.pojo.User;
 import org.hamcrest.core.Is;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 public class MQSenderTest {
 

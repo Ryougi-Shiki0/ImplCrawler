@@ -52,7 +52,6 @@ public class ImageInfoServiceImpl implements ImageInfoService {
             return list;
         }
         String res0=redisService.get(ImageInfoKey.getById,tags,String.class);
-        //list= ;
         if (temp.length == 1) {
             if (list.size() > 0) {
                 return Arrays.asList(res0.split(","));
