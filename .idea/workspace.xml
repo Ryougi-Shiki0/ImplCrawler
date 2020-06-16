@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0b03882-99d5-4149-9693-9d53b89023e4" name="Default Changelist" comment="2020.5.23 Update Kafka">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/dao/ImageInfoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/myproject/multifunctioncrawler/entity/ImageInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ImageInfoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +69,7 @@
     <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.35747126" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -389,22 +384,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1592311508658" />
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1592312224287">
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1592314439075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592312224287" />
-    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1592312224287">
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1592314439075" />
+    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1592314439075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592312224287" />
-    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1592312224286">
+    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1592314439075" />
+    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1592314439075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592312224286" />
-    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1592312224287">
+    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1592314439075" />
+    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1592314439075">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592312224287" />
+    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1592314439075" />
     <state width="1493" height="195" key="GridCell.Tab.1.bottom" timestamp="1592299257065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -441,10 +436,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="491" y="123" key="RollbackChangesDialog/0.0.1536.824@0.0.1536.824" timestamp="1584262107275" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1589795604737">
+    <state x="249" y="0" key="SettingsEditor" timestamp="1592315549121">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1589795604737" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1592315549121" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1590240745046">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
