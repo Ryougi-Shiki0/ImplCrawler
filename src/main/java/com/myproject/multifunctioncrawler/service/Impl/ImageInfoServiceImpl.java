@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import com.myproject.multifunctioncrawler.pojo.ImageInfo;
-import redis.clients.jedis.Jedis;
 import us.codecraft.webmagic.ResultItems;
 
 import java.util.ArrayList;
@@ -23,7 +22,6 @@ public class ImageInfoServiceImpl implements ImageInfoService {
 
     @Autowired
     private ImageInfoDao imageInfoDao;
-
     @Autowired
     private RedisService redisService;
 
