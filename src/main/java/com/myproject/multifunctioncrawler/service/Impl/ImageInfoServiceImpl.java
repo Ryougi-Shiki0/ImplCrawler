@@ -7,13 +7,13 @@ import com.myproject.multifunctioncrawler.service.ImageInfoService;
 import com.myproject.multifunctioncrawler.service.redis.ImageInfoKey;
 import com.myproject.multifunctioncrawler.service.redis.RedisService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import us.codecraft.webmagic.ResultItems;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -29,13 +29,13 @@ public class ImageInfoServiceImpl implements ImageInfoService {
     public void savePixivImagesData(ResultItems resultItems) {
         //获取封装好的数据
         List<ImageInfo> imageInfos = resultItems.get("ImageInfo");
-        if (!imageInfos.isEmpty()) {
+        if (!CollectionUtils.isNotEmpty(imageInfos)) {
             try {
                 for (ImageInfo imageInfo : imageInfos) {
                     imageInfoDao.savePixivImageInfo(imageInfo);
                 }
             } catch (DuplicateKeyException e) {
-                log.debug("Duplicated Image.");
+                log.error("Duplicated Image. ImageInfo={}",imageInfos);
             }
             log.info("Save Success.");
         }
@@ -51,9 +51,6 @@ public class ImageInfoServiceImpl implements ImageInfoService {
         }
         String res0 = redisService.get(ImageInfoKey.getById, tags, String.class);
         if (temp.length == 1) {
-            if (list.size() > 0) {
-                return Arrays.asList(res0.split(","));
-            }
             list = imageInfoDao.searchPixivImageByTag("%" + temp[0] + "%");
         } else {
             return list;
